@@ -15,5 +15,9 @@
     "koa2"
   ],
   "author": "George.Shen (varlinor@hotmail.com)",
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/varlinor/route-scanner"
+  },
   "license": "MIT"
 }
