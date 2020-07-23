@@ -22,18 +22,20 @@ const routeScanner = require('route-scanner');
 ......
 
 routeScanner(app,{
+    debug:false,
     routerPath: path.join(__dirname, 'routes'),
-    prefix:'projectname',   // modifier
-    exceptMap:{
-        index:'/'
-    },
-    specialMap:{
-        rootPath:path.join(__dirname, '/other-routes-path'),
+    prefix:'std',   //  modifier
+    replacePaths:[{
+        from:'/index',
+        to:'/'
+    }],
+    extraMaps:[{
+        rootPath:path.join(__dirname, '/core/base-routes'),
         fileMaps:[{
             url:'/admin',
             file:'admin.js'
         }]
-    }
+    }]
 });
 ......
 // other express or koa codes to use middleware
@@ -44,6 +46,13 @@ after that, you can create any router file in directory `/routes/`, and don't wr
 
 
 ## Configuration
+### debug
+You can set `debug:true` to open scan logs print.
+```
+{
+    debug:true
+}
+```
 ### routerPath
 Specify the root for those route files. It's an absolutly path, so you can input like this:
 ```
@@ -64,21 +73,26 @@ Specify the prefix of the url, if you fill a string, then your root url turned t
 }
 ```
 
-### exceptMap
+### replacePaths
 If you want to change a file name to an other url, you can use this option:
 ```
 {
-    index:'/',
-    user:'/manager/user'  // enter http://localhost:3000/manager/user will directed to user.js
+    replacePaths:[{
+        from:'/index',
+        to:'/mgr/index'
+    }],
+    // enter http://localhost:3000/mgr/index will directed to index.js
 }
 ```
-then, the route file `/routes/index.js` will be mapped to `/`, so the full url is `http://localhost:3000/`, when you enter this url , it will be directed to `index.js`
+then, the route file `/routes/index.js` will be mapped to `/mgr/index`,
+so the full url is `http://localhost:3000/mgr/index`, when you enter
+this url , it will be directed to `index.js`
 
-### specialMap
+### extraMaps
 Specify another path to load other route files, you can use it like below:
 ```
 {
-    specialMap:{
+    extraMaps:[{
         rootPath:path.join(__dirname, '/another-routes-path'),
         fileMaps:[{
             url:'/admin',
@@ -87,7 +101,7 @@ Specify another path to load other route files, you can use it like below:
             url:'/service',
             file:'/subdir/service.js'
         }]
-    }
+    }]
 }
 ```
 

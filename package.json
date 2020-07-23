@@ -1,6 +1,6 @@
 {
   "name": "route-scanner",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "just easy to use, aimed to load route fastly and conveniently.",
   "main": "index.js",
   "scripts": {
