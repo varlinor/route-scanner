@@ -1,0 +1,19 @@
+{
+  "name": "route-scanner",
+  "version": "0.0.1",
+  "description": "just easy to use, aimed to load route fastly and conveniently.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "route",
+    "scan",
+    "route-scanner",
+    "koa",
+    "koa2"
+  ],
+  "author": "George.Shen (varlinor@hotmail.com)",
+  "license": "MIT"
+}
