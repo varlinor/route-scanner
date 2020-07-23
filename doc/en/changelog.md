@@ -2,14 +2,19 @@
 
 
 ## v0.2.0
-修改路由扫描方式，增加了对多级目录的支持，修改配置项字段，具体修改如下：
+Scan function has changed, add support for multi-level directories,
+changed configuration field, details below:
 
-* 删除可配置字段specialMap、exceptMap；
-* 增加可配置字段replacePaths：用于添加自定义替换url，即key为实际路径自动生成的url，value为要替换的url；
-* 增加可配置字段extraMaps：用于配置其他路径的路由文件，支持多个不同的路径；
-* 增加可配置字段debug：用于开启执行日志的输出。
+* deleted options `specialMap`, `exceptMap`;
+* add options `replacePaths`: just for custom define rules to change url
+  mapping.
+* add options `extraMaps`: used to add other route files path, multiple
+  directories are possible;
+* add options `debug`: used to print scan logs.
 
-PS：支持多级目录后，可通过不同目录模拟多个微服务的动态路由。
+PS: after support for multi-level directories, it can be simulated as
+dynamic routing for multiple micro-services.
+
 
 ## v0.1.0
 Initial version, just support path scan, url replace, special file

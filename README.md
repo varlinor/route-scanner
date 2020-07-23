@@ -1,6 +1,6 @@
 # route-scanner
 
-[English](README.MD) | [中文](doc/cn/readme_cn.md)  
+[English](README.md) | [中文](doc/cn/readme_cn.md)
 
 Recent version: v0.1.0
 
