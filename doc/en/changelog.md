@@ -1,6 +1,9 @@
 # Change Log
 
 
+## v0.2.1
+Fix the bug that registered route has double `//` as first two string.
+
 ## v0.2.0
 Scan function has changed, add support for multi-level directories,
 changed configuration field, details below:

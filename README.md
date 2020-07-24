@@ -1,11 +1,11 @@
 # route-scanner
 
-[![npm package](https://img.shields.io/badge/npm-v0.2.0-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
+[![npm package](https://img.shields.io/badge/npm-v0.2.1-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
 
 
 [English](README.md) | [中文](doc/cn/readme_cn.md)
 
-Recent version: v0.2.0
+Recent version: v0.2.1
 
 ## Release History
 See the [Change Log](doc/en/changelog.md)

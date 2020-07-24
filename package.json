@@ -1,10 +1,10 @@
 {
   "name": "route-scanner",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "just easy to use, aimed to load route fastly and conveniently.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon ./test/express-server.js"
   },
   "keywords": [
     "express",
@@ -13,9 +13,13 @@
     "route-scanner"
   ],
   "author": "George.Shen (varlinor@hotmail.com)",
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/varlinor/route-scanner"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
 }

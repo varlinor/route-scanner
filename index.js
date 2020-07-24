@@ -36,12 +36,11 @@ class Scanner {
                 let repPaths=this.options.replacePaths;
                 // add default redirection
                 if(this.prefix){
+                    this.prefix=`/${this.prefix}`;
                     app.get('/',(req,res,next)=>{
                         res.redirect(`${this.prefix}/`);
                     });
                 }
-                this.prefix=`/${this.prefix}`;
-
 
                 repPaths.map( ({from,to})=>{
                     // let {from,to}=item;
