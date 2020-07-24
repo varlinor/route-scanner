@@ -10,9 +10,7 @@
     "express",
     "route",
     "scan",
-    "route-scanner",
-    "koa",
-    "koa2"
+    "route-scanner"
   ],
   "author": "George.Shen (varlinor@hotmail.com)",
   "repository":{

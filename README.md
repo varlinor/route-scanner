@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](doc/cn/readme_cn.md)
 
-Recent version: v0.1.0
+Recent version: v0.2.0
 
 ## Release History
 See the [Change Log](doc/en/changelog.md)
@@ -38,7 +38,7 @@ routeScanner(app,{
     }]
 });
 ......
-// other express or koa codes to use middleware
+// other express codes to use middleware
 module.exports=app;
 ``` 
 

@@ -34,14 +34,14 @@ class Scanner {
         if(app && typeof this.routerPath ==='string' ){
             if(this.prefix.indexOf('/')<0){
                 let repPaths=this.options.replacePaths;
-
-                this.prefix=`/${this.prefix}`;
                 // add default redirection
                 if(this.prefix){
                     app.get('/',(req,res,next)=>{
                         res.redirect(`${this.prefix}/`);
                     });
                 }
+                this.prefix=`/${this.prefix}`;
+
 
                 repPaths.map( ({from,to})=>{
                     // let {from,to}=item;

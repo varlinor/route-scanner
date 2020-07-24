@@ -2,7 +2,7 @@
 
 [English](../../README.md) | [中文](readme_cn.md)
 
-最新版本: v0.1.0
+最新版本: v0.2.0
 
 ## 发布历史
 &emsp;&emsp;查看[更新日志](changelog_cn.md)  
@@ -47,7 +47,7 @@ module.exports=app;
 
 ## 配置参数
 ### debug
-设置`debug:true`可以打开扫描日志的输出。
+&emsp;&emsp;设置`debug:true`可以打开扫描日志的输出。
 ```
 {
     debug:true
@@ -86,7 +86,7 @@ module.exports=app;
 }
 ```
 &emsp;&emsp;配置后路由文件`/routes/index.js` 将会被映射成
-`/mgr/index`，所以访问`http://localhost:3000/mgr/index`这一路径时，实际转向的是`index.js`文件内定义的路由。同样，配置`user:'/manager/user'`，可将原本访问`http://localhost:3000/user`的url变为：`http://localhost:3000/manager/user`。
+`/mgr/index`，所以访问`http://localhost:3000/mgr/index`这一路径时，实际转向的是`index.js`文件内定义的路由。
 
 ### extraMaps
 &emsp;&emsp;指定一个或多个其他路径并加载其中的路由文件，配置方式如下：
