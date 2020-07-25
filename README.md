@@ -3,12 +3,12 @@
 [![npm package](https://img.shields.io/badge/npm-v0.2.1-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
 
 
-[English](README.md) | [中文](doc/cn/readme_cn.md)
+[English](README.md) | [中文](docs/cn/readme_cn.md)
 
 Recent version: v0.2.1
 
 ## Release History
-See the [Change Log](doc/en/changelog.md)
+See the [Change Log](docs/en/changelog.md)
 
 ## Introduction
 This module is a tiny tool just for scan some route file in a directory, you can use it to load masses of route files fastly and conveniently.
