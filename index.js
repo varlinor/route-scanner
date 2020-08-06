@@ -1,8 +1,14 @@
 const path=require('path'),
     fs=require('fs');
 
+const DEF_FRAMEWORK={
+    Express:'express',
+    Koa2:'koa2'
+};
+
 const _def_opts={
     debug:true,
+    framework:'express',  //  express / koa2
     routerPath:'',
     prefix:'',
     replacePaths:[/*{
@@ -23,6 +29,7 @@ class Scanner {
     constructor(opts){
         this.options=Object.assign({},_def_opts,opts);
         this.debug=this.options.debug;
+        this.framework=this.options.framework;
         this.prefix= this.options.prefix;
         this.routerPath=this.options.routerPath;
         this.extraMaps=this.options.extraMaps;
@@ -37,9 +44,13 @@ class Scanner {
                 // add default redirection
                 if(this.prefix){
                     this.prefix=`/${this.prefix}`;
-                    app.get('/',(req,res,next)=>{
-                        res.redirect(`${this.prefix}/`);
-                    });
+                    // escape koa2 error
+                    if(this.framework===DEF_FRAMEWORK.Express){
+                        app.get('/',(req,res,next)=>{
+                            res.redirect(`${this.prefix}/`);
+                        });
+                    }
+
                 }
 
                 repPaths.map( ({from,to})=>{
@@ -59,7 +70,8 @@ class Scanner {
                             if(url && file){
                                 let ffp=path.join(rootPath, file),
                                     m=require(ffp);
-                                app.use(url,m);
+                                // app.use(url,m);  // just for express
+                                register(this.framework,app,url,m);
                                 this.routerMap.set(url,ffp);
                             }
                         });
@@ -93,7 +105,8 @@ class Scanner {
                 if(this.debug){
                     console.log(`register router [${realK}] with file :${fp}`);
                 }
-                app.use(realK,m);
+                // app.use(realK,m);  // just for express
+                register(this.framework,app,realK,m);
                 this.routerMap.set(realK,fp);
             }else{
                 throw `${m} is not function!`;
@@ -123,6 +136,27 @@ class Scanner {
     }
 
 }
+
+const register=function (framework,app,path,module) {
+    if(DEF_FRAMEWORK.Koa2===framework){
+        registerRouteByKoa2(app,path,module);
+    }else{
+        registerRouteByExpress(app,path,module);
+    }
+};
+
+const registerRouteByExpress=function(app,path,module){
+    if(app && path && module){
+        app.use(path,module);
+    }
+};
+
+const registerRouteByKoa2=function(app,path,module){
+    if(app && module){
+        app.use(module.routes(),module.allowedMethods());
+    }
+};
+
 
 module.exports=function (app,opts) {
     let scanner;

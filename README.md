@@ -1,11 +1,11 @@
 # route-scanner
 
-[![npm package](https://img.shields.io/badge/npm-v0.2.1-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
+[![npm package](https://img.shields.io/badge/npm-v0.2.2-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
 
 
 [English](README.md) | [中文](docs/cn/readme_cn.md)
 
-Recent version: v0.2.1
+Recent version: v0.2.2
 
 ## Release History
 See the [Change Log](docs/en/changelog.md)
@@ -26,6 +26,7 @@ const routeScanner = require('route-scanner');
 
 routeScanner(app,{
     debug:false,
+    framework:'express',    // express or koa2
     routerPath: path.join(__dirname, 'routes'),
     prefix:'std',   //  modifier
     replacePaths:[{
@@ -56,6 +57,16 @@ You can set `debug:true` to open scan logs print.
     debug:true
 }
 ```
+
+### framework
+You can set `express` or `koa2` to specify the framework, if empty ,
+`express` is default.
+```
+{
+    framework:'express'
+}
+```
+
 ### routerPath
 Specify the root for those route files. It's an absolutly path, so you can input like this:
 ```

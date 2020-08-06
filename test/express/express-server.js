@@ -4,7 +4,7 @@
  */
 const express=require('express'),
     path = require('path'),
-    scanner=require('../index'),
+    scanner=require('../../index'),
     app=express(),port=3000;
 
 //  load routers

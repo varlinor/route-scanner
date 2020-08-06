@@ -1,11 +1,11 @@
 # route-scanner
 
-[![npm package](https://img.shields.io/badge/npm-v0.2.1-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
+[![npm package](https://img.shields.io/badge/npm-v0.2.2-brightgreen)](https://www.npmjs.com/package/route-scanner)&nbsp;
 
 
 [English](../../README.md) | [中文](readme_cn.md)
 
-最新版本: v0.2.1
+最新版本: v0.2.2
 
 ## 发布历史
 &emsp;&emsp;查看[更新日志](changelog_cn.md)  
@@ -26,6 +26,7 @@ const routeScanner = require('route-scanner');
 // 加载路由
 routeScanner(app,{
     debug:false,
+    framework:'express'  // express or koa2
     routerPath: path.join(__dirname, 'routes'),
     prefix:'std',   //  modifier
     replacePaths:[{
@@ -56,6 +57,15 @@ module.exports=app;
     debug:true
 }
 ```
+
+### framework
+&emsp;&emsp;你可以设置`express` 或者 `koa2` 来指定框架类型，如果为空，默认值是`express`。
+```
+{
+    framework:'express'
+}
+```
+
 ### routerPath
 &emsp;&emsp;指定那些路由文件所在的目录，像express框架，默认的路由目录为`routes`，这是一个绝对路径，所以你可以像下面这种写法来配置：
 ```

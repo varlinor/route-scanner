@@ -1,13 +1,16 @@
 {
   "name": "route-scanner",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "just easy to use, aimed to load route fastly and conveniently.",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon ./test/express-server.js"
+    "test": "nodemon ./test/express/express-server.js",
+    "koa2": "nodemon ./test/koa2/koa2-server.js"
   },
   "keywords": [
     "express",
+    "koa2",
+    "koa",
     "route",
     "scan",
     "route-scanner"
@@ -20,6 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "express": "^4.17.1",
+    "koa2": "^2.0.0-alpha.7",
     "nodemon": "^2.0.4"
   }
 }
